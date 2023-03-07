@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import News_Card from './components/Card/Card';
+import news from './Data';
+import NewsState from '../src/context/NewsState'
+import Card_Modal from './components/Modal/Modal';
+import AppBar from '@mui/material/AppBar';
+let images = require.context('../public/images', true)
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+// 6B4B3E
+    <>
+      <AppBar sx={{ bgcolor: "#6A2E35" }} className='header'><h2>NEWS</h2></AppBar>
+      <NewsState>
+        <div className="grid">
+          {
+            news.map((single_news, key) => {
+
+              let imgSrc = images(`./N${single_news.name}.png`)
+              return (
+                <div>
+                  <News_Card key={key} heading={single_news.heading} image={imgSrc} index={single_news.name} />
+                  <Card_Modal />
+                </div>
+              )
+            })
+          }
+        </div>
+      </NewsState>
+    </>
   );
 }
 

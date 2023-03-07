@@ -1,0 +1,19 @@
+.ContentModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 10%;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+@media (max-width: 550px) {
+    .content {
+        overflow-y: scroll;
+        height: 450px;
+    }
+
+}
