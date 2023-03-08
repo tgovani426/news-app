@@ -22,9 +22,9 @@ const Card_Modal = () => {
                     className='ContentModal'
                 >
                     <Grow in={open}>
-                        <Card style={{backgroundColor:"#E16F7C"}}>
+                        <Card style={{ backgroundColor: "#E16F7C" }}>
                             <CardHeader title={news[newsIndex].heading} />
-                            <CardContent style={{fontFamily:"cursive"}} >
+                            <CardContent style={{ fontFamily: "monospace", fontSize: "17px" }} >
                                 <div className="content">{news[newsIndex].content}</div>
                             </CardContent>
                         </Card>
